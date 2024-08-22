@@ -6,9 +6,10 @@ body {
 
 }
 
+/* header */
 .header {
     background-color: #FFFFFF;
-    height: 40px;
+    /* height: 40px; */
     padding: 20px;
 
 
@@ -28,6 +29,7 @@ body {
 
 .header .logo {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
     color: var(--mainColor);
@@ -35,8 +37,14 @@ body {
 
 }
 
+.header .logo a {
+    color: var(--mainColor);
+    font-weight: bold;
+}
+
 .nav ul {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 15px;
 
@@ -49,6 +57,7 @@ body {
 
 .auth {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     align-items: center;
 
@@ -79,8 +88,133 @@ body {
 
 }
 
-@media screen and (max-width: 920px) {
-    .nav {
+/* footer */
+.footer {
+    background-color: #393E46;
+    color: white;
+    padding: 20px;
+    font-weight: 300px;
+
+}
+
+.footer a {
+    color: white;
+
+}
+
+.footer .logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    color: var(--mainColor);
+    font-weight: 200px;
+
+}
+
+.footer .logo img {
+    width: 30px;
+}
+
+.footer .row {
+    gap: 100px;
+
+}
+
+.footer-start {
+    width: 500px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.footer-end {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+
+.footer-item {
+    display: flex;
+    gap: 10px;
+    width: 100px;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.footer-item-header {
+
+    font-weight: bold;
+}
+
+/*  start to responsve header */
+@media screen and (max-width: 324px) {
+
+    .nav,
+    .auth {
+        display: none;
+
+    }
+
+    .list {
+        display: block;
+        order: 2;
+    }
+
+    .container {
+        width: calc(100% - 40px);
+    }
+
+    .header .logo img {
+        width: 20px;
+    }
+
+    .header .logo a {
+        color: var(--mainColor);
+        font-weight: normal;
+    }
+
+
+
+
+}
+
+@media screen and (min-width:325px) and (max-width: 403px) {
+
+    .nav,
+    .auth {
+        display: none;
+
+    }
+
+    .list {
+        display: block;
+        order: 2;
+    }
+
+    .container {
+
+        width: calc(100% - 60px);
+    }
+
+    .header .logo img {
+        width: 25px;
+    }
+
+    .header .logo a {
+        color: var(--mainColor);
+        font-weight: normal;
+    }
+
+}
+
+@media screen and (min-width:404px) and (max-width: 920px) {
+
+    .nav,
+    .auth {
         display: none;
 
     }
@@ -91,3 +225,5 @@ body {
     }
 
 }
+
+/* End of responsve header */
