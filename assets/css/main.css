@@ -2,17 +2,18 @@
 
 body {
     font-family: var(--mainFont);
-    background-color: #e0ddddf8;
-
+    background-color: #FFFFFF;
+    height:2000px;
 }
 
 /* header */
 .header {
     background-color: #FFFFFF;
-    /* height: 40px; */
     padding: 20px;
-
-
+    box-shadow: 3px -5px 20px 0px #bbb9b9;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .list {
@@ -88,12 +89,157 @@ body {
 
 }
 
+/* section Courses*/
+
+
+.courses{
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 3px -5px 20px 0px #bbb9b9;
+}
+.courses.row {
+    gap: 40px;
+    
+}
+.course{
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 20px;
+    width:calc((100% - 40px)/2);
+
+}
+.course-item{
+    padding:10px;
+    width:calc((100% - 20px)/2) ;
+    box-shadow: 3px -5px 20px 0px #bbb9b9;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.course-card{
+    position:relative;
+ }
+.course-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+.course-info{
+    position:absolute;
+    top:0px;
+    left:0px;
+    right: 0;
+    bottom:0;
+    color: #FFFFFF;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding:20px;
+
+}
+.course-info span:first-of-type{
+    background-color: var(--mainColor);
+    padding: 10px;
+
+}
+.course-info span:last-of-type{
+    align-self: flex-end;
+
+}
+.course-descrption{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width:calc((100% - 40px)/2);
+ 
+}
+.course-item img{
+    width: 100%;
+    filter: brightness(80%);
+}
+
+.course-detailes .row:last-of-type{
+    gap: 10px;
+    color: #BBB9B8;
+    justify-content: flex-start;
+    
+}
+
+.course-descrption span {
+    color:var(--mainColor);
+}
+.courses .course-descrption .see-all {
+    text-align: center;
+    width: 150px;
+    color: white;
+    background-color: var(--mainColor);
+    border: 2px solid var(--mainColor);
+    padding: 5px ;
+
+}
+.courses a {
+    font-family: var(--subFont);
+    padding: 6px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+
+
+}
+/* section testmonials*/
+.testmonials {
+    padding: 20px;
+
+}
+
+.testmonials .row {
+    gap: 40px;
+
+}
+
+.testmonials h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+.testmonial {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0px 8.23px 8.23px rgb(218, 216, 216);
+    padding: 20px;
+    box-sizing: border-box;
+    width: calc((100% - 40px)/2);
+    position: relative;
+}
+
+.user-info img {
+    width: 40px;
+}
+
+.user-info {
+    display: flex;
+    gap: 10px;
+}
+
+.testmonial ::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-right: 20px solid #F4F4F4;
+    border-top: 20px solid #F4F4F4;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid transparent;
+
+}
+
 /* footer */
 .footer {
     background-color: #393E46;
     color: white;
     padding: 20px;
     font-weight: 300px;
+
 
 }
 
@@ -117,12 +263,20 @@ body {
 }
 
 .footer .row {
-    gap: 100px;
+    gap: 20px;
+
+}
+
+.footer .icons img {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    padding: 10px;
 
 }
 
 .footer-start {
-    width: 500px;
+    width: calc((100% - 30px) / 2);
     display: flex;
     gap: 20px;
     flex-direction: column;
@@ -130,19 +284,26 @@ body {
 }
 
 .footer-end {
-    flex-grow: 1;
+    width: calc((100% - 30px) / 2);
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-evenly;
 
 }
 
-.footer-item {
+.footer-end nav {
     display: flex;
-    gap: 10px;
-    width: 100px;
     flex-direction: column;
+    gap: 10px;
     flex-wrap: wrap;
+
+}
+
+.footer-end .footer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
 }
 
 .footer-item-header {
@@ -227,3 +388,43 @@ body {
 }
 
 /* End of responsve header */
+
+/*  start to responsve footer */
+@media screen and (max-width:768px) {
+    .footer-start {
+        width: 100%;
+
+    }
+
+    .footer-end {
+        gap: 10px;
+    }
+
+    .footer-end .footer-item {
+        width: calc((100% 10px)/4)
+    }
+
+}
+
+@media screen and (max-width:576px) {
+    .footer-end {
+        gap: 10px;
+    }
+
+    .footer-start p {
+        display: none;
+    }
+
+    .footer-end .footer-item {
+        width: calc((100% 10px) / 3)
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .footer-end .footer-item {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* End of responsve footer */
