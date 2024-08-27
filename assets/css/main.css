@@ -115,14 +115,16 @@ body {
     box-shadow: 3px -5px 20px 0px #bbb9b9;
     box-sizing: border-box;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
-.course-card{
-    position:relative;
- }
 .course-item:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   }
+.course-card{
+    position:relative;
+ }
+
 .course-info{
     position:absolute;
     top:0px;
@@ -151,6 +153,8 @@ body {
     flex-direction: column;
     gap: 10px;
     width:calc((100% - 40px)/2);
+    opacity: 0; 
+    animation: fadeIn 3s ease forwards;
  
 }
 .course-item img{
@@ -165,18 +169,28 @@ body {
     
 }
 
+
 .course-descrption span {
     color:var(--mainColor);
+    
+
 }
-.courses .course-descrption .see-all {
+.course-descrption .see-all {
     text-align: center;
     width: 150px;
     color: white;
     background-color: var(--mainColor);
     border: 2px solid var(--mainColor);
     padding: 5px ;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
 }
+.see-all:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
 .courses a {
     font-family: var(--subFont);
     padding: 6px 30px;
@@ -185,6 +199,7 @@ body {
 
 
 }
+
 /* section testmonials*/
 .testmonials {
     padding: 20px;
@@ -210,6 +225,8 @@ body {
     box-sizing: border-box;
     width: calc((100% - 40px)/2);
     position: relative;
+    opacity: 0; 
+    animation: fadeIn 3s ease forwards;
 }
 
 .user-info img {
@@ -389,6 +406,25 @@ body {
 
 /* End of responsve header */
 
+/*  start to responsve course */
+@media (max-width: 768px) {
+    .course {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .course-item {
+        width: calc(100% - 20px);
+        margin-bottom: 20px;
+    }
+
+    .course-descrption {
+        width: 100%;
+    }
+}
+/*  end to responsve course */
+
 /*  start to responsve footer */
 @media screen and (max-width:768px) {
     .footer-start {
@@ -428,3 +464,15 @@ body {
 }
 
 /* End of responsve footer */
+
+/*Animation course*/
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
