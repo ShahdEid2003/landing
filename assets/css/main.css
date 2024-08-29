@@ -64,7 +64,7 @@ body {
 
 }
 
-.auth a {
+.auth a,.buttons a {
     font-family: var(--subFont);
     padding: 6 30 px;
     border-radius: 10px;
@@ -81,12 +81,66 @@ body {
 
 }
 
-.auth .register {
+.auth .register,.home .register{
     color: white;
     background-color: var(--mainColor);
     border: 2px solid var(--mainColor);
     padding: 5px 35px;
 
+}
+/* section Home*/
+
+.home {
+    padding: 20px;
+}
+.home span {
+    color :var(--mainColor); 
+    width:min-content;
+}
+.home-content {
+    width:calc((100% - 350px)/2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.home-content h1{
+    font-size:50px;
+
+}
+.home-content p{
+    color:#969696;
+
+}
+.home .row{
+    gap: 30px;
+   
+}
+.home-img{
+    width:calc((100% - 40px)/2);
+    display: flex;
+    justify-content: center;
+  
+}
+.home-img img{
+    width:80%;
+    
+}
+.buttons{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+.buttons .playVideo{
+    color: black;
+    border: 2px solid none;
+    padding: 5px ;
+}
+.play{
+    color:#F0C932;
+    font-size: large;
+  
 }
 
 /* section Courses*/
@@ -203,6 +257,7 @@ body {
 /* section testmonials*/
 .testmonials {
     padding: 20px;
+    
 
 }
 
@@ -323,7 +378,7 @@ body {
 
 }
 
-.footer-item-header {
+.highlight {
 
     font-weight: bold;
 }
@@ -421,6 +476,16 @@ body {
 
     .course-descrption {
         width: 100%;
+    }
+}
+/*  end to responsve course */
+
+/*  start to responsve testmonial */
+@media (max-width: 570px) {
+    .testmonial {
+        width: 100%;
+        flex-direction: column;
+        
     }
 }
 /*  end to responsve course */
