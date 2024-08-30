@@ -760,8 +760,26 @@ body {
 /*------------------------------------
 
 /*  start to responsve course */
+@media (max-width: 900px) {
+    .course  {
+        width: 100%;
+        align-items: center;
+        gap: 20px;
+    }
 
-@media (max-width: 768px) {
+    .course-item {
+        width: calc((100% - 20px)/2);
+        
+        margin-bottom: 20px;
+    }
+
+    .course-descrption {
+        width: 100%;
+    }
+    
+}
+
+@media (max-width: 650px) {
     .course {
         width: 100%;
         flex-direction: column;
